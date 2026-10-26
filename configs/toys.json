@@ -1,0 +1,12 @@
+{
+  "domain": "Toys",
+  "block_size": 4,
+  "max_blocks": 4,
+  "latent_topk": 8,
+  "tau_u": 0.75,
+  "tau_b": 0.1,
+  "adapter_strength": 0.5,
+  "beams": 20,
+  "step_weights": [1, 1, 1, 1, 1, 1, 1, 1],
+  "step_temperatures": [1, 1.2, 1.2, 1.2, 1.2, 1, 1, 1]
+}

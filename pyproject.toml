@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dynr2"
+version = "0.1.0"
+description = "Belief-guided dynamic explicit-latent reasoning for generative recommendation"
+license = {file = "LICENSE"}
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.6",
+    "transformers>=4.51,<6",
+    "peft>=0.15,<1",
+    "accelerate>=1.2,<2",
+    "safetensors>=0.4",
+    "numpy>=1.24,<3",
+    "pandas>=2.0,<3",
+    "pyarrow>=14",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8", "ruff>=0.9"]
+pipeline = ["faiss-cpu>=1.7", "sentence-transformers>=3", "scipy>=1.12", "huggingface-hub>=0.30"]
+distributed = ["deepspeed>=0.16; sys_platform == 'linux'"]
+
+[project.scripts]
+dynr2-train = "dynr2.train:main"
+dynr2-evaluate = "dynr2.evaluate:main"
+dynr2-value = "dynr2.fit_value:main"
+
+[tool.setuptools.packages.find]
+include = ["dynr2*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]

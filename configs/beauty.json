@@ -1,0 +1,12 @@
+{
+  "domain": "Beauty",
+  "block_size": 4,
+  "max_blocks": 4,
+  "latent_topk": 8,
+  "tau_u": 0.55,
+  "tau_b": 0.1,
+  "adapter_strength": 1.0,
+  "beams": 20,
+  "step_weights": [0, 0.8, 1, 1, 1.2, 0, 0, 0],
+  "step_temperatures": [1, 1, 1, 1, 1, 1, 1, 1]
+}
